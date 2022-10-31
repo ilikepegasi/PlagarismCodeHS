@@ -1,0 +1,24 @@
+// This program draws some balloons
+
+var MIN_RADIUS = 20;
+var MAX_RADIUS = 40;
+var NUM_BALLOONS = 25;
+
+function start() {
+    var px = getWidth()/2;
+    var py = getHeight()/2;
+	for(var x = 0; x < NUM_BALLOONS; x++) {
+	    draw(px, py);
+	}
+}
+function draw(px, py) {
+    var r = Randomizer.nextInt(MIN_RADIUS, MAX_RADIUS);
+    var rx = Randomizer.nextInt(getWidth()/4, getWidth()*(0.75));
+    var ry = Randomizer.nextInt(0, py-getHeight()/6);
+    var l = new Line(px, py, rx, ry);
+    add(l);
+    var c = new Circle(r);
+    c.setPosition(rx, ry);
+    c.setColor(Randomizer.nextColor());
+    add(c);
+}
