@@ -1,0 +1,19 @@
+function start(){
+	// Write your code here
+	var x = readInt("");
+    var n = hailstone(x);
+	println("The function took "+n+" steps to complete");
+}
+function hailstone(x) {
+    var n = 0;
+	while(x != 1) {
+	    if(x % 2 == 0) {
+	        x = x / 2;
+	    } else {
+	        x = x * 3 + 1;
+	    }
+	    println(x);
+	    n++;
+	}
+	return n;
+}
