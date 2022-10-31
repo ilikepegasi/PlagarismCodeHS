@@ -1,0 +1,31 @@
+function start(){
+	// Write your code here
+    println(letterGrade(100)+letterGrade(83)+letterGrade(68)+letterGrade(91)+letterGrade(47)+letterGrade(79));
+}
+function letterGrade(score) {
+    var g;
+    switch(Math.floor(score / 10)) {
+        case 10:
+            return "A+";
+        case 9: 
+            g = "A";
+            break;
+        case 8:
+            g = "B";
+            break;
+        case 7:
+            g = "C";
+            break;
+        case 6:
+            g = "D";
+            break;
+        default:
+            return "F";
+    }
+    if(score % 10 <= 2) {
+        g = g+"-";
+    } else {
+        g = g+"+";
+    }
+    return g;
+}
