@@ -1,0 +1,19 @@
+function start() {
+    var a = readInt("");
+    var b = readInt("");
+    var n = calculateArea(a, b);
+    println("The area of each mat is "+n+"square feet");
+    var c = readInt("");
+    var d = readInt("");
+    var i = calculateArea(c, d);
+    println("The area of the room is "+i+"square feet");
+    var o = i/n;
+    println("You need "+o+"mats to cover the room");
+}
+
+
+// This function should calculate the area of a rectangle using
+// the parameters of width and length.
+function calculateArea(width, length){
+   return width*length; 
+}
