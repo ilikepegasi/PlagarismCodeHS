@@ -1,0 +1,28 @@
+var POLE_WIDTH = 5;
+var LIGHT_RADIUS = 10;
+var LIGHT_REQUIRED_HEIGHT = 200;
+
+function start(){
+	drawBuilding(50, 200, 50);
+	drawBuilding(100, 300, 125);
+	drawBuilding(50, 150, 200);
+	drawBuilding(100, 350, 275);
+
+	// Add some more buildings!
+}
+
+
+function drawBuilding(width, height, xPosition){
+	var b = new Rectangle(width, height);
+	b.setPosition(xPosition-(width/2), getHeight()-height);
+	add(b);
+	if(height>=LIGHT_REQUIRED_HEIGHT) {
+	    var p = new Rectangle(POLE_WIDTH, height/6);
+	    p.setPosition(xPosition-(POLE_WIDTH/2), getHeight()-(7/6)*height);
+	    add(p);
+	    var c = new Circle(LIGHT_RADIUS);
+	    c.setPosition(xPosition, getHeight()-(7/6)*height);
+	    c.setColor(Color.green);
+	    add(c);
+	}
+}
